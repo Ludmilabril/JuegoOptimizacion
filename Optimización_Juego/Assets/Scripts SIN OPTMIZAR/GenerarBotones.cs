@@ -138,14 +138,7 @@ public class GenerarBotones : MonoBehaviour
 
     bool checkGameEnded()
     {
-        foreach (var item in botonesGrid)
-        {
-            if(item.GetComponent<Button>().interactable)
-            {
-                return false;
-            }
-        }
-        return true;
+        return botonesGrid.All(item => !item.GetComponent<Button>().interactable);
     }
 
     void reiniciarGrilla()
